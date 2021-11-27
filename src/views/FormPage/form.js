@@ -13,7 +13,7 @@ export const childFormControl = ({name, age}) => {
         )
     }
 }
-export const formControls = initial => {
+export const createFormControls = initial => {
     return {
         name: formControl(
             {label: "Имя", type: "text", errorMessage: "Заполните поле Имя"},

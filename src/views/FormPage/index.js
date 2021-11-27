@@ -2,7 +2,7 @@ import {useContext, useState} from "react";
 import {AppContext} from "contexts/AppContext";
 import Input from "components/Input";
 import {validate, validateForm} from "utils/form";
-import {childFormControl, formControls} from "./form";
+import {childFormControl, createFormControls} from "./form";
 import plusIcon from 'assets/plus.svg'
 import _ from 'lodash'
 
@@ -10,7 +10,8 @@ import _ from 'lodash'
 
 const FormPage = () => {
     const {formValues, saveData} = useContext(AppContext)
-    const [form, setForm] = useState({formControls: formControls(formValues), isFormValid: false})
+    const formControls = createFormControls(formValues)
+    const [form, setForm] = useState({formControls, isFormValid: validateForm(formControls)})
 
     const submitHandler = () => {
         const values = {...form.formControls}
@@ -84,6 +85,7 @@ const FormPage = () => {
     }
     return (
         <>
+            {JSON.stringify(form)}
             <div>
                 <p className="form-personal-label">Персональные данные</p>
                 <Input {...getFieldProps('name')} className="mb-10"/>
@@ -93,10 +95,10 @@ const FormPage = () => {
                 <div className="children-header">
                     <p className="form-children-label">Дети (макс. 5)</p>
                     {form.formControls.children?.length !== 5 &&
-                        <button className="form-children-add" onClick={onChildrenAdd}>
-                            <img src={plusIcon} alt="" className="no-selection"/>
-                            <span className="form-children-button-text no-selection">Добавить ребенка</span>
-                        </button>
+                    <button className="form-children-add" onClick={onChildrenAdd}>
+                        <img src={plusIcon} alt="" className="no-selection"/>
+                        <span className="form-children-button-text no-selection">Добавить ребенка</span>
+                    </button>
                     }
                 </div>
                 <div className="children-body">
