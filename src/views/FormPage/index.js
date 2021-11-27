@@ -85,7 +85,6 @@ const FormPage = () => {
     }
     return (
         <>
-            {JSON.stringify(form)}
             <div>
                 <p className="form-personal-label">Персональные данные</p>
                 <Input {...getFieldProps('name')} className="mb-10"/>
