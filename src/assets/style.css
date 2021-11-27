@@ -1,0 +1,120 @@
+body {
+    font-family: Montserrat;
+    margin: 0;
+}
+
+.page-content {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    width: 45%;
+}
+
+.form-personal-label, .preview-label {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 20px;
+}
+
+.preview-personal-details{
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    color: #111111;
+}
+.preview-children{
+    margin-top: 60px;
+}
+
+.form-children-label {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.preview-children-item{
+    height: 44px;
+    width: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    background: #F1F1F1;
+    border-radius: 5px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: bold;
+}
+
+.form-children-add {
+    cursor: pointer;
+    width: 204px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border: 2px solid #01A7FD;
+    box-sizing: border-box;
+    border-radius: 100px;
+    background-color: #fff;
+}
+.form-children-button-text {
+    font-size: 14px;
+    line-height: 24px;
+    color: #01A7FD;
+}
+
+.children-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+.children-body {
+    margin-top: 7px;
+}
+.children-item {
+    display: flex;
+    /*align-items: center;*/
+}
+.children-item > div:first-child, .children-item > div:nth-child(2) {
+    margin-right: 18px;
+}
+.children-item > span {
+    display: flex;
+    align-items: center;
+    height: 56px;
+    font-size: 14px;
+    line-height: 24px;
+    color: #01A7FD;
+    cursor: pointer;
+}
+
+.save-button {
+    margin-top: 30px;
+    color: #FFF;
+    cursor: pointer;
+    width: 118px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+    background: #01A7FD;
+    border: none;
+    border-radius: 100px;
+    font-size: 14px;
+    line-height: 24px;
+}
+.no-selection{
+    user-select: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

@@ -1,25 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import {AppProvider} from "./contexts/AppContext";
+import Views from "./views";
+import Loading from "./components/Loading";
+import 'assets/style.css'
+const App = () => {
+    return (
+        <div className="App">
+            <AppProvider spinner={<Loading/>}>
+                <Views/>
+            </AppProvider>
+        </div>
+    )
 }
 
-export default App;
+export default App

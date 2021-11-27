@@ -1,0 +1,26 @@
+.header {
+    display: flex;
+    align-items: center;
+    height: 76px;
+    box-shadow: 0 1px 0 rgba(17, 17, 17, 0.1);
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.menu-item{
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 24px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+    color: rgba(17, 17, 17, 0.48);
+}
+.menu-item.active{
+    color: rgba(17, 17, 17, 0.8);
+}
