@@ -30,7 +30,7 @@ export function validateForm(formControls) {
             isFormValid = formControls[control].valid && isFormValid
         }
     }
-    formControls.children.forEach(item => {
+    formControls.children?.forEach(item => {
         isFormValid = item.name.valid && isFormValid
         isFormValid = item.age.valid && isFormValid
     })

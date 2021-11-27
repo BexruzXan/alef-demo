@@ -66,22 +66,30 @@ const FormPage = () => {
     }
     const onChildrenAdd = () => {
         if (form.formControls.children?.length === 5) return false
-        setForm(state => ({
-            ...state,
-            formControls: {
-                ...state.formControls,
-                children: [...state.formControls.children, childFormControl(Math.random())]
+        setForm(state => {
+            const formState = {
+                ...state,
+                formControls: {
+                    ...state.formControls,
+                    children: [...state.formControls.children, childFormControl({name: '', age: ''})]
+                }
             }
-        }))
+            formState.isFormValid = validateForm(formState.formControls)
+            return formState
+        })
     }
     const onChildrenDelete = (key) => {
-        setForm(state => ({
-            ...state,
-            formControls: {
-                ...state.formControls,
-                children: state.formControls.children.filter((_, index) => index !== key)
+        setForm(state => {
+            const formState = {
+                ...state,
+                formControls: {
+                    ...state.formControls,
+                    children: state.formControls.children.filter((_, index) => index !== key)
+                }
             }
-        }))
+            formState.isFormValid = validateForm(formState.formControls)
+            return formState
+        })
     }
     return (
         <>
